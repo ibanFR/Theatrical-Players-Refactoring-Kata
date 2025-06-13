@@ -7,6 +7,7 @@
 5. Replace Temporary Variable `play` with Query in `print` method.
 6. Inline Variable `play` in `print` method.
 7. ~~Change Function Declaration for `amountFor` method.~~
+8. Inline variable `thisAmount` in `print` method.
 
 ## Instructions
 0. “test after every refactoring, however simple” => CONTROL + R
@@ -24,6 +25,8 @@ This material may be protected by copyright.
 5. “consider the parameters to amountFor, I look to see where they come from. aPerformance comes from the loop variable, so naturally changes with each iteration through the loop. But play is computed from the performance, so there’s no need to pass it in as a parameter at all—I can just recalculate it within amountFor”
 6. 
 7. not worth it in Java
+8. “The great benefit of removing local variables is that it makes it much easier to do extractions, since there is less local scope to deal with. Indeed, usually I’ll take out local variables before I do any extractions.”
+
 
 
 
