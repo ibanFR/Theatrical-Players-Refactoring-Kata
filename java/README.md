@@ -5,6 +5,7 @@
 3. Rename parameter `perf` to `aPerformance` in `amountFor` method.
 4. Join declaration and assignment of `thisAmount` in `print` method.
 5. Replace Temporary Variable `play` with Query in `print` method.
+6. Inline Variable `play` in `print` method.
 
 ## Instructions
 0. “test after every refactoring, however simple” => CONTROL + R
