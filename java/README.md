@@ -6,6 +6,7 @@
 4. Join declaration and assignment of `thisAmount` in `print` method.
 5. Replace Temporary Variable `play` with Query in `print` method.
 6. Inline Variable `play` in `print` method.
+7. ~~Change Function Declaration for `amountFor` method.~~
 
 ## Instructions
 0. “test after every refactoring, however simple” => CONTROL + R
@@ -21,6 +22,8 @@ This material may be protected by copyright.
 3. “look in the fragment for any variables that will no longer be in scope”
 4. OPTION + ENTER
 5. “consider the parameters to amountFor, I look to see where they come from. aPerformance comes from the loop variable, so naturally changes with each iteration through the loop. But play is computed from the performance, so there’s no need to pass it in as a parameter at all—I can just recalculate it within amountFor”
+6. 
+7. not worth it in Java
 
 
 
