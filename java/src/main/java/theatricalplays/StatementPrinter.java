@@ -12,7 +12,7 @@ public class StatementPrinter {
     }
 
     private static String renderPlainText(StatementData data, Map<String, Play> plays) {
-        var result = String.format("Statement for %s\n", data.invoice().customer);
+        var result = String.format("Statement for %s\n", data.customer());
 
         for (var perf : data.invoice().performances) {
 
