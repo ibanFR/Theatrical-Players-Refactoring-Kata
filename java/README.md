@@ -10,7 +10,7 @@
 8. Inline variable `thisAmount` in `print` method.
 9. Extract Method `volumeCredits` from `print` method.
    - Inline method `playFor` in `print` method.
-   - 
+   - Introduce variable `play` in `print` method.
    - Split variable
 10. 
 
