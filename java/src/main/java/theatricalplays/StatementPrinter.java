@@ -14,7 +14,7 @@ public class StatementPrinter {
     private static String renderPlainText(StatementData data, Invoice invoice, Map<String, Play> plays) {
         var result = String.format("Statement for %s\n", data.customer());
 
-        for (var perf : invoice.performances) {
+        for (var perf : data.performances()) {
 
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
