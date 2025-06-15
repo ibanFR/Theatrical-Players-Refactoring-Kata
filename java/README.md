@@ -22,6 +22,7 @@
 11. Removing Total Volume Credits:
     - Split loop in `print` method.
     - Use Slide statement to move the declaration of the variable next to the loop.
+    - Extract method `totalVolumeCredits` from `print` method.
 
 
 ## Instructions
