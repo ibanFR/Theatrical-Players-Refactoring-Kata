@@ -10,7 +10,6 @@ public class StatementPrinter {
         var totalAmount = 0;
         var result = String.format("Statement for %s\n", invoice.customer);
 
-        var volumeCredits = totalVolumeCredits(invoice, plays);
 
         for (var perf : invoice.performances) {
 
@@ -22,7 +21,7 @@ public class StatementPrinter {
             totalAmount += amountFor(perf, playFor(plays, perf));
         }
         result += String.format("Amount owed is %s\n", usd(totalAmount ));
-        result += String.format("You earned %s credits\n", volumeCredits);
+        result += String.format("You earned %s credits\n", totalVolumeCredits(invoice, plays));
         return result;
     }
 
