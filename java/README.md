@@ -13,7 +13,7 @@
    - Introduce variable `play` in `print` method.
    - Slide statement 
    - Extract method `volumeCreditsFor` from `print` method.
-   - Split variable
+   - Split variable /  remove assignments to `volumeCredits` parameter in `volumeCreditsFor` method.
 10. 
 
 

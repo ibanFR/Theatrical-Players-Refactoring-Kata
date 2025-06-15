@@ -30,11 +30,12 @@ public class StatementPrinter {
 
     private static int volumeCreditsFor(Performance perf, int volumeCredits, Play play) {
         // add volume credits
-        volumeCredits += Math.max(perf.audience - 30, 0);
+        int result = volumeCredits;
+        result += Math.max(perf.audience - 30, 0);
         // add extra credit for every ten comedy attendees
         if ("comedy".equals(play.type))
-            volumeCredits += Math.floor(perf.audience / 5);
-        return volumeCredits;
+            result += Math.floor(perf.audience / 5);
+        return result;
     }
 
     private static Play playFor(Map<String, Play> plays, Performance perf) {
