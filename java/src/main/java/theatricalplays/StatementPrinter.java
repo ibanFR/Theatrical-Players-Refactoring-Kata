@@ -25,21 +25,21 @@ public class StatementPrinter {
     }
 
     private static int totalAmount(Invoice invoice, Map<String, Play> plays) {
-        var totalAmount = 0;
+        var result = 0;
         for (var perf : invoice.performances) {
-            totalAmount += amountFor(perf, playFor(plays, perf));
+            result += amountFor(perf, playFor(plays, perf));
         }
-        return totalAmount;
+        return result;
     }
 
     private static int totalVolumeCredits(Invoice invoice, Map<String, Play> plays) {
-        var volumeCredits = 0;
+        var result = 0;
         for (var perf : invoice.performances) {
 
             // add volume credits
-            volumeCredits += volumeCreditsFor(perf, playFor(plays, perf));
+            result += volumeCreditsFor(perf, playFor(plays, perf));
         }
-        return volumeCredits;
+        return result;
     }
 
     private static String usd(int totalAmount) {
