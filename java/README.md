@@ -8,15 +8,17 @@
 6. Inline Variable `play` in `print` method.
 7. ~~Change Function Declaration for `amountFor` method.~~
 8. Inline variable `thisAmount` in `print` method.
-9. Extract Method `volumeCredits` from `print` method.
+9. Extract Method `volumeCredits` from `print` method:
    - Inline method `playFor` in `print` method.
    - Introduce variable `play` in `print` method.
-   - Slide statement 
+   - Slide statement.
    - Extract method `volumeCreditsFor` from `print` method.
-   - Split variable /  remove assignments to `volumeCredits` parameter in `volumeCreditsFor` method.
-   - change function declaration - remove parameter
-10. Removing the `frmt` variable in `print` method.
-   - Put arguments on separate lines
+   - Split variable/remove assignments to `volumeCredits` parameter in `volumeCreditsFor` method.
+   - Change function declaration - remove parameter.
+10. Removing the `frmt` variable in `print` method:
+    - Put arguments on separate lines.
+    - Inline variable `frmt` in `print` method.
+11. Eleventh refactoring.
 
 
 ## Instructions
