@@ -29,6 +29,7 @@
     - Use Slide statement to move the declaration of the variable next to the loop.
     - Extract method `appleSauce` from `print` method.
     - Inline variable `totalAmount` in `print` method.
+    - Rename method `appleSauce` to `totalAmount`.
 
 
 ## Instructions

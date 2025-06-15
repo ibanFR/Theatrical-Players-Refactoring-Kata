@@ -19,12 +19,12 @@ public class StatementPrinter {
                                     perf.audience);
         }
 
-        result += String.format("Amount owed is %s\n", usd(appleSauce(invoice, plays)));
+        result += String.format("Amount owed is %s\n", usd(totalAmount(invoice, plays)));
         result += String.format("You earned %s credits%n", totalVolumeCredits(invoice, plays));
         return result;
     }
 
-    private static int appleSauce(Invoice invoice, Map<String, Play> plays) {
+    private static int totalAmount(Invoice invoice, Map<String, Play> plays) {
         var totalAmount = 0;
         for (var perf : invoice.performances) {
             totalAmount += amountFor(perf, playFor(plays, perf));
