@@ -21,7 +21,7 @@ public class StatementPrinter {
             totalAmount += amountFor(perf, playFor(plays, perf));
         }
         result += String.format("Amount owed is %s\n", usd(totalAmount ));
-        result += String.format("You earned %s credits\n", totalVolumeCredits(invoice, plays));
+        result += String.format("You earned %s credits%n", totalVolumeCredits(invoice, plays));
         return result;
     }
 
