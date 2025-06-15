@@ -18,6 +18,7 @@
 10. Removing the `frmt` variable in `print` method:
     - Put arguments on separate lines.
     - Inline variable `frmt` in `print` method.
+    - Extract method `usd` from `print` method.
 11. Eleventh refactoring.
 
 

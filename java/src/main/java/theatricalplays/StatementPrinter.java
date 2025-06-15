@@ -25,10 +25,14 @@ public class StatementPrinter {
                                     perf.audience);
             totalAmount += amountFor(perf, playFor(plays, perf));
         }
-        result += String.format("Amount owed is %s\n", NumberFormat.getCurrencyInstance(Locale.US)
-                .format(totalAmount / 100));
+        result += String.format("Amount owed is %s\n", usd(totalAmount));
         result += String.format("You earned %s credits\n", volumeCredits);
         return result;
+    }
+
+    private static String usd(int totalAmount) {
+        return NumberFormat.getCurrencyInstance(Locale.US)
+                .format(totalAmount / 100);
     }
 
     private static int volumeCreditsFor(Performance perf, Play play) {
