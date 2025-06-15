@@ -20,18 +20,18 @@ public class StatementPrinter {
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
                                     playFor(plays, perf).name,
-                                    usd(amountFor(perf, playFor(plays, perf)) / 100),
+                                    usd(amountFor(perf, playFor(plays, perf))),
                                     perf.audience);
             totalAmount += amountFor(perf, playFor(plays, perf));
         }
-        result += String.format("Amount owed is %s\n", usd(totalAmount / 100));
+        result += String.format("Amount owed is %s\n", usd(totalAmount ));
         result += String.format("You earned %s credits\n", volumeCredits);
         return result;
     }
 
     private static String usd(int totalAmount) {
         return NumberFormat.getCurrencyInstance(Locale.US)
-                .format(totalAmount);
+                .format(totalAmount/ 100);
     }
 
     private static int volumeCreditsFor(Performance perf, Play play) {
