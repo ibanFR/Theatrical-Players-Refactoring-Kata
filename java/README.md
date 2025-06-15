@@ -34,6 +34,7 @@
     - Extract method `renderPlainText` from `print` method.
     - Create `StatementData` class as the intermediate data structure between the calculation and formatting phases.
     - Move `customer` to the `StatementData` class.
+    - Move `performances` to the `StatementData` class.
 
 
 
