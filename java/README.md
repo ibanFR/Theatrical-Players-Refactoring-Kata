@@ -27,7 +27,7 @@
 12. Remove `totalAmount` variable in `print` method:
     - Split loop for `totalAmount` in `print` method.
     - Use Slide statement to move the declaration of the variable next to the loop.
-    - Extract method `totalAmount` from `print` method.
+    - Extract method `appleSauce` from `print` method.
     - Inline variable `totalAmount` in `print` method.
 
 
