@@ -23,8 +23,8 @@ public class StatementPrinter {
                                     perf.audience);
         }
 
-        result += String.format("Amount owed is %s%n", usd(totalAmount(invoice, plays)));
-        result += String.format("You earned %s credits%n", totalVolumeCredits(invoice, plays));
+        result += String.format("Amount owed is %s%n", usd(totalAmount(data.invoice(), plays)));
+        result += String.format("You earned %s credits%n", totalVolumeCredits(data.invoice(), plays));
         return result;
     }
 
