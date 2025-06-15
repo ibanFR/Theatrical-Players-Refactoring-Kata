@@ -11,8 +11,8 @@ public class StatementPrinter {
         return renderPlainText(statementData,invoice, plays);
     }
 
-    private static String renderPlainText(StatementData statementData, Invoice invoice, Map<String, Play> plays) {
-        var result = String.format("Statement for %s\n", statementData.customer());
+    private static String renderPlainText(StatementData data, Invoice invoice, Map<String, Play> plays) {
+        var result = String.format("Statement for %s\n", data.customer());
 
         for (var perf : invoice.performances) {
 
