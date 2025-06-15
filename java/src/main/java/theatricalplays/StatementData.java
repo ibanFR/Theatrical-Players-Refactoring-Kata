@@ -1,4 +1,4 @@
 package theatricalplays;
 
-public record StatementData(java.util.List<Performance> performances, Invoice invoice) {
+public record StatementData(Invoice invoice) {
 }
