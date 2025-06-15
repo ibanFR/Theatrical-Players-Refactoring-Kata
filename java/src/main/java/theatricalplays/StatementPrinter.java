@@ -7,8 +7,11 @@ import java.util.Map;
 public class StatementPrinter {
 
     public String print(Invoice invoice, Map<String, Play> plays) {
-        var result = String.format("Statement for %s\n", invoice.customer);
+        return renderPlainText(invoice, plays);
+    }
 
+    private static String renderPlainText(Invoice invoice, Map<String, Play> plays) {
+        var result = String.format("Statement for %s\n", invoice.customer);
 
         for (var perf : invoice.performances) {
 

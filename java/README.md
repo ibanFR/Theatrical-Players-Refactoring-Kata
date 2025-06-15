@@ -30,6 +30,9 @@
     - Extract method `appleSauce` from `print` method.
     - Inline variable `totalAmount` in `print` method.
     - Rename method `appleSauce` to `totalAmount`.
+13. Splitting the Phases of Calculation and Formatting
+    - Extract method `renderPlainText` from `print` method.
+
 
 
 ## Instructions
