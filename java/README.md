@@ -19,7 +19,8 @@
     - Put arguments on separate lines.
     - Inline variable `frmt` in `print` method.
     - Extract method `usd` from `print` method.
-11. Eleventh refactoring.
+11. Removing Total Volume Credits:
+    - Split loop in `print` method.
 
 
 ## Instructions

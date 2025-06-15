@@ -13,9 +13,11 @@ public class StatementPrinter {
 
         for (var perf : invoice.performances) {
 
-            Play play = plays.get(perf.playID);
             // add volume credits
-            volumeCredits += volumeCreditsFor(perf, play);
+            volumeCredits += volumeCreditsFor(perf, playFor(plays, perf));
+        }
+
+        for (var perf : invoice.performances) {
 
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
