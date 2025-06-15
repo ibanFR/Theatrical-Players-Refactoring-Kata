@@ -16,7 +16,8 @@ public class StatementPrinter {
         for (var perf : invoice.performances) {
 
             Play play = plays.get(perf.playID);
-            volumeCredits = volumeCreditsFor(perf, volumeCredits, play);
+            // add volume credits
+            volumeCredits += volumeCreditsFor(perf, play);
 
             // print line for this order
             result += String.format("  %s: %s (%s seats)\n", playFor(plays, perf).name, frmt.format(
@@ -28,9 +29,8 @@ public class StatementPrinter {
         return result;
     }
 
-    private static int volumeCreditsFor(Performance perf, int volumeCredits, Play play) {
-        // add volume credits
-        int result = volumeCredits;
+    private static int volumeCreditsFor(Performance perf, Play play) {
+        int result = 0;
         result += Math.max(perf.audience - 30, 0);
         // add extra credit for every ten comedy attendees
         if ("comedy".equals(play.type))

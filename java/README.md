@@ -14,6 +14,7 @@
    - Slide statement 
    - Extract method `volumeCreditsFor` from `print` method.
    - Split variable /  remove assignments to `volumeCredits` parameter in `volumeCreditsFor` method.
+   - change function declaration - remove parameter
 10. 
 
 
