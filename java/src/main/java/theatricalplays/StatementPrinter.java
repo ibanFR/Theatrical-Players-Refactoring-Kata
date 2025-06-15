@@ -20,8 +20,10 @@ public class StatementPrinter {
             volumeCredits += volumeCreditsFor(perf, play);
 
             // print line for this order
-            result += String.format("  %s: %s (%s seats)\n", playFor(plays, perf).name, frmt.format(
-                    amountFor(perf, playFor(plays, perf)) / 100), perf.audience);
+            result += String.format("  %s: %s (%s seats)\n",
+                                    playFor(plays, perf).name,
+                                    frmt.format(amountFor(perf, playFor(plays, perf)) / 100),
+                                    perf.audience);
             totalAmount += amountFor(perf, playFor(plays, perf));
         }
         result += String.format("Amount owed is %s\n", frmt.format(totalAmount / 100));

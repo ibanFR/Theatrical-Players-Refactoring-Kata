@@ -15,7 +15,8 @@
    - Extract method `volumeCreditsFor` from `print` method.
    - Split variable /  remove assignments to `volumeCredits` parameter in `volumeCreditsFor` method.
    - change function declaration - remove parameter
-10. 
+10. Removing the `frmt` variable in `print` method.
+   - Put arguments on separate lines
 
 
 ## Instructions
