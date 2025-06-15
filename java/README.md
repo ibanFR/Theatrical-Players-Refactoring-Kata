@@ -11,6 +11,7 @@
 9. Extract Method `volumeCredits` from `print` method.
    - Inline method `playFor` in `print` method.
    - Introduce variable `play` in `print` method.
+   - Slide statement 
    - Split variable
 10. 
 

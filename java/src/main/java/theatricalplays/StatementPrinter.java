@@ -15,10 +15,10 @@ public class StatementPrinter {
 
         for (var perf : invoice.performances) {
 
+            Play play = plays.get(perf.playID);
             // add volume credits
             volumeCredits += Math.max(perf.audience - 30, 0);
             // add extra credit for every ten comedy attendees
-            Play play = plays.get(perf.playID);
             if ("comedy".equals(play.type))
                 volumeCredits += Math.floor(perf.audience / 5);
 
