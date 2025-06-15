@@ -20,10 +20,15 @@
     - Inline variable `frmt` in `print` method.
     - Extract method `usd` from `print` method.
 11. Removing Total Volume Credits:
-    - Split loop in `print` method.
+    - Split loop for `volumeCredits` in `print` method.
     - Use Slide statement to move the declaration of the variable next to the loop.
     - Extract method `totalVolumeCredits` from `print` method.
     - Inline variable `volumeCredits` in `print` method.
+12. Remove `totalAmount` variable in `print` method:
+    - Split loop for `totalAmount` in `print` method.
+    - Use Slide statement to move the declaration of the variable next to the loop.
+    - Extract method `totalAmount` from `print` method.
+    - Inline variable `totalAmount` in `print` method.
 
 
 ## Instructions

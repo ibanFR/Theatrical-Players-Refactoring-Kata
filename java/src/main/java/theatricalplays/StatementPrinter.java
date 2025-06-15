@@ -18,6 +18,9 @@ public class StatementPrinter {
                                     playFor(plays, perf).name,
                                     usd(amountFor(perf, playFor(plays, perf))),
                                     perf.audience);
+        }
+
+        for (var perf : invoice.performances) {
             totalAmount += amountFor(perf, playFor(plays, perf));
         }
         result += String.format("Amount owed is %s\n", usd(totalAmount ));
