@@ -21,6 +21,7 @@
     - Extract method `usd` from `print` method.
 11. Removing Total Volume Credits:
     - Split loop in `print` method.
+    - Slide statement in `print` method.
 
 
 ## Instructions

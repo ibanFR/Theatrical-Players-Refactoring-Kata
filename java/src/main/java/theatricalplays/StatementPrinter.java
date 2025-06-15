@@ -8,9 +8,9 @@ public class StatementPrinter {
 
     public String print(Invoice invoice, Map<String, Play> plays) {
         var totalAmount = 0;
-        var volumeCredits = 0;
         var result = String.format("Statement for %s\n", invoice.customer);
 
+        var volumeCredits = 0;
         for (var perf : invoice.performances) {
 
             // add volume credits
