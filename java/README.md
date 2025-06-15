@@ -32,6 +32,7 @@
     - Rename method `appleSauce` to `totalAmount`.
 13. Splitting the Phases of Calculation and Formatting
     - Extract method `renderPlainText` from `print` method.
+    - Create `StatementData` class as the intermediate data structure between the calculation and formatting phases.
 
 
 
