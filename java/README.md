@@ -35,6 +35,7 @@
     - Create `StatementData` class as the intermediate data structure between the calculation and formatting phases.
     - Add `invoice` field to the `StatementData` class.
     - update `renderPlainText` method to use `invoice` from `StatementData` class.
+    - Remove `invoice` parameter from `renderPlainText` method.
     
 
 

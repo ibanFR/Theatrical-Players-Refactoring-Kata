@@ -8,10 +8,10 @@ public class StatementPrinter {
 
     public String print(Invoice invoice, Map<String, Play> plays) {
         var statementData = new StatementData(invoice);
-        return renderPlainText(statementData,invoice, plays);
+        return renderPlainText(statementData, plays);
     }
 
-    private static String renderPlainText(StatementData data, Invoice invoice, Map<String, Play> plays) {
+    private static String renderPlainText(StatementData data, Map<String, Play> plays) {
         var result = String.format("Statement for %s\n", data.invoice().customer);
 
         for (var perf : data.invoice().performances) {
