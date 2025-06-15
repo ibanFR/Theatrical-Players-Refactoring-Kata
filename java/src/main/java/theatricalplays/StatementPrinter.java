@@ -19,8 +19,7 @@ public class StatementPrinter {
                                     perf.audience);
         }
 
-        var totalAmount = appleSauce(invoice, plays);
-        result += String.format("Amount owed is %s\n", usd(totalAmount ));
+        result += String.format("Amount owed is %s\n", usd(appleSauce(invoice, plays)));
         result += String.format("You earned %s credits%n", totalVolumeCredits(invoice, plays));
         return result;
     }
