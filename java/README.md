@@ -33,6 +33,7 @@
 13. Splitting the Phases of Calculation and Formatting
     - Extract method `renderPlainText` from `print` method.
     - Create `StatementData` class as the intermediate data structure between the calculation and formatting phases.
+    - Move `customer` to the `StatementData` class.
 
 
 
@@ -56,7 +57,12 @@ This material may be protected by copyright.
 9. First attempt to extract `volumeCreditsFor` method shows that I need to pass `plays` parameter because it is used by the extracted code in the `playFor` method.
    - It seems that there is very little value in passing all the `plays` to the `volumeCreditsFor` method, so I will inline the `playFor` method in the `print` method as a preparation for the extraction of `volumeCreditsFor` method.
 10. 
+13. “examine the other arguments used by renderPlainText. I want to move the data that comes from them into the intermediate data structure, so that all the calculation code moves into the statement function and renderPlainText operates solely on data passed to it through the data parameter.”
 
+Excerpt From
+Refactoring: Improving the Design of Existing Code, Second Edition (Garner McCloud's Library)
+Martin Fowler
+This material may be protected by copyright.
 
 
 
