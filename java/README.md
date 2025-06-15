@@ -8,6 +8,12 @@
 6. Inline Variable `play` in `print` method.
 7. ~~Change Function Declaration for `amountFor` method.~~
 8. Inline variable `thisAmount` in `print` method.
+9. Extract Method `volumeCredits` from `print` method.
+   - Inline method `playFor` in `print` method.
+   - 
+   - Split variable
+10. 
+
 
 ## Instructions
 0. “test after every refactoring, however simple” => CONTROL + R
@@ -26,6 +32,9 @@ This material may be protected by copyright.
 6. 
 7. not worth it in Java
 8. “The great benefit of removing local variables is that it makes it much easier to do extractions, since there is less local scope to deal with. Indeed, usually I’ll take out local variables before I do any extractions.”
+9. First attempt to extract `volumeCreditsFor` method shows that I need to pass `plays` parameter because it is used by the extracted code in the `playFor` method.
+   - It seems that there is very little value in passing all the `plays` to the `volumeCreditsFor` method, so I will inline the `playFor` method in the `print` method as a preparation for the extraction of `volumeCreditsFor` method.
+10. 
 
 
 
