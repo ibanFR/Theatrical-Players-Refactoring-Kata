@@ -8,11 +8,11 @@ public class StatementPrinter {
 
     public String print(Invoice invoice, Map<String, Play> plays) {
         var statementData = new StatementData(invoice, plays);
-        return renderPlainText(statementData, plays);
+        return renderPlainText(statementData);
     }
 
-    private static String renderPlainText(StatementData data, Map<String, Play> plays) {
-        var result = String.format("Statement for %s\n", data.customer());
+    private static String renderPlainText(StatementData data) {
+        var result = String.format("Statement for %s%n", data.customer());
 
         for (var perf : data.performances()) {
 
