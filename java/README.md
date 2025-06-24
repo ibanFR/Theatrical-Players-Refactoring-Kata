@@ -40,6 +40,7 @@
     - update `renderPlainText` method to use `plays` from `StatementData` class.
     - Remove `plays` parameter from `renderPlainText` method.
     - Add `StatementData` parameter to `totalAmount` method.
+    - update `totalAmount` method to use `StatementData` parameter.
     
 
 

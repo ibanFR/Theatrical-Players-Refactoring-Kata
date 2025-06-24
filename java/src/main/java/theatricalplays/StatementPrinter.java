@@ -30,8 +30,8 @@ public class StatementPrinter {
 
     private static int totalAmount(StatementData data, Invoice invoice, Map<String, Play> plays) {
         var result = 0;
-        for (var perf : invoice.performances) {
-            result += amountFor(perf, playFor(plays, perf));
+        for (var perf : data.invoice().performances) {
+            result += amountFor(perf, playFor(data.plays(), perf));
         }
         return result;
     }
