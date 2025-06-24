@@ -18,13 +18,13 @@ public class StatementPrinter {
 
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
-                                    playFor(plays, perf).name,
-                                    usd(amountFor(perf, playFor(plays, perf))),
+                                    playFor(data.plays(), perf).name,
+                                    usd(amountFor(perf, playFor(data.plays(), perf))),
                                     perf.audience);
         }
 
-        result += String.format("Amount owed is %s%n", usd(totalAmount(data.invoice(), plays)));
-        result += String.format("You earned %s credits%n", totalVolumeCredits(data.invoice(), plays));
+        result += String.format("Amount owed is %s%n", usd(totalAmount(data.invoice(), data.plays())));
+        result += String.format("You earned %s credits%n", totalVolumeCredits(data.invoice(), data.plays()));
         return result;
     }
 
