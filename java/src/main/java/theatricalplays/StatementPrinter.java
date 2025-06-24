@@ -23,12 +23,12 @@ public class StatementPrinter {
                                     perf.audience);
         }
 
-        result += String.format("Amount owed is %s%n", usd(totalAmount(data.invoice(), data.plays())));
+        result += String.format("Amount owed is %s%n", usd(totalAmount(data,data.invoice(), data.plays())));
         result += String.format("You earned %s credits%n", totalVolumeCredits(data.invoice(), data.plays()));
         return result;
     }
 
-    private static int totalAmount(Invoice invoice, Map<String, Play> plays) {
+    private static int totalAmount(StatementData data, Invoice invoice, Map<String, Play> plays) {
         var result = 0;
         for (var perf : invoice.performances) {
             result += amountFor(perf, playFor(plays, perf));

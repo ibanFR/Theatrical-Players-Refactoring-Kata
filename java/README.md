@@ -39,6 +39,7 @@
     - Change function declaration for `StatementData` constructor and add `plays` parameter.
     - update `renderPlainText` method to use `plays` from `StatementData` class.
     - Remove `plays` parameter from `renderPlainText` method.
+    - Add `StatementData` parameter to `totalAmount` method.
     
 
 
