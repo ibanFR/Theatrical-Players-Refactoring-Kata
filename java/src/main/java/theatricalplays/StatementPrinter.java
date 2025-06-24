@@ -38,10 +38,10 @@ public class StatementPrinter {
 
     private static int totalVolumeCredits(StatementData data, Invoice invoice, Map<String, Play> plays) {
         var result = 0;
-        for (var perf : invoice.performances) {
+        for (var perf : data.invoice().performances) {
 
             // add volume credits
-            result += volumeCreditsFor(perf, playFor(plays, perf));
+            result += volumeCreditsFor(perf, playFor(data.plays(), perf));
         }
         return result;
     }
