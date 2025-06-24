@@ -24,19 +24,19 @@ public class StatementPrinter {
         }
 
         result += String.format("Amount owed is %s%n", usd(totalAmount(data)));
-        result += String.format("You earned %s credits%n", totalVolumeCredits(data.invoice(), data.plays()));
+        result += String.format("You earned %s credits%n", totalVolumeCredits(data,data.invoice(), data.plays()));
         return result;
     }
 
     private static int totalAmount(StatementData data) {
         var result = 0;
-        for (var perf : data.invoice().performances) {
+        for (var perf : data.performances()) {
             result += amountFor(perf, playFor(data.plays(), perf));
         }
         return result;
     }
 
-    private static int totalVolumeCredits(Invoice invoice, Map<String, Play> plays) {
+    private static int totalVolumeCredits(StatementData data, Invoice invoice, Map<String, Play> plays) {
         var result = 0;
         for (var perf : invoice.performances) {
 
