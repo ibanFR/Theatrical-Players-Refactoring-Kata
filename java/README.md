@@ -53,6 +53,7 @@
     - convert `amountFor` to instance method in `PerformanceData` class.
     - convert `totalAmount` to instance method in `StatementData` class.
     - move logic to create `PerformanceData` object to `StatementData` class.
+    - make `playFor` method non-static in `StatementData` class.
     
 
 

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) {
-    static Play playFor(Map<String, Play> plays, Performance perf) {
+    Play playFor(Map<String, Play> plays, Performance perf) {
         return plays.get(perf.playID);
     }
 
