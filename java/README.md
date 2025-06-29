@@ -44,6 +44,7 @@
     - change function declaration for `totalAmount` method to remove `invoice` and `plays` parameters.
     - Add `StatementData` parameter to `totalVolumeCredits` method.
     - update `totalVolumeCredits` method to use `StatementData` parameter.
+    - change function declaration for `totalVolumeCredits` method to remove `invoice` and `plays` parameters.
     
 
 

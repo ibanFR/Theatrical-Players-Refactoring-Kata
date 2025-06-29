@@ -24,7 +24,7 @@ public class StatementPrinter {
         }
 
         result += String.format("Amount owed is %s%n", usd(totalAmount(data)));
-        result += String.format("You earned %s credits%n", totalVolumeCredits(data,data.invoice(), data.plays()));
+        result += String.format("You earned %s credits%n", totalVolumeCredits(data));
         return result;
     }
 
@@ -36,7 +36,7 @@ public class StatementPrinter {
         return result;
     }
 
-    private static int totalVolumeCredits(StatementData data, Invoice invoice, Map<String, Play> plays) {
+    private static int totalVolumeCredits(StatementData data) {
         var result = 0;
         for (var perf : data.invoice().performances) {
 
