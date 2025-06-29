@@ -42,6 +42,7 @@ public class StatementPrinter {
     }
 
     private static int amountFor(Performance aPerformance, Play play) {
+        PerformanceData performanceData = new PerformanceData(aPerformance, play);
         int result;
         switch (play.type) {
             case "tragedy":
