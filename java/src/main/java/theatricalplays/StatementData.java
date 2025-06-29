@@ -22,7 +22,7 @@ public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) 
         for (var perf : invoice().performances) {
 
             // add volume credits
-            result += new PerformanceData(perf, playForPerformance(perf)).volumeCreditsFor();
+            result += new PerformanceData(perf, playForPerformance(perf)).volumeCredits();
         }
         return result;
     }

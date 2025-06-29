@@ -23,7 +23,7 @@ public record PerformanceData(Performance performance, Play play) {
         return result;
     }
 
-    int volumeCreditsFor() {
+    int volumeCredits() {
         int result = 0;
         result += Math.max(performance().audience - 30, 0);
         // add extra credit for every ten comedy attendees
