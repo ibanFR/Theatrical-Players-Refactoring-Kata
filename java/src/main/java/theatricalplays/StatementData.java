@@ -8,9 +8,7 @@ public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) 
     }
 
     PerformanceData getPerformanceData(Performance perf) {
-        return new PerformanceData(perf,
-                                   playForPerformance(
-                                           perf));
+        return new PerformanceData(perf, playForPerformance(perf));
     }
 
     int totalAmount() {
