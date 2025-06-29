@@ -18,8 +18,8 @@ public class StatementPrinter {
 
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
-                                    playFor(aStatementData.plays(), perf).name,
-                                    usd(amountFor(perf, playFor(aStatementData.plays(), perf))),
+                                    StatementData.playFor(aStatementData.plays(), perf).name,
+                                    usd(amountFor(perf, StatementData.playFor(aStatementData.plays(), perf))),
                                     perf.audience);
         }
 
@@ -31,7 +31,7 @@ public class StatementPrinter {
     private static int totalAmount(StatementData data) {
         var result = 0;
         for (var perf : data.performances()) {
-            result += amountFor(perf, playFor(data.plays(), perf));
+            result += amountFor(perf, StatementData.playFor(data.plays(), perf));
         }
         return result;
     }
@@ -41,7 +41,7 @@ public class StatementPrinter {
         for (var perf : data.invoice().performances) {
 
             // add volume credits
-            result += new PerformanceData(perf, playFor(data.plays(), perf)).volumeCreditsFor();
+            result += new PerformanceData(perf, StatementData.playFor(data.plays(), perf)).volumeCreditsFor();
         }
         return result;
     }
@@ -49,10 +49,6 @@ public class StatementPrinter {
     private static String usd(int totalAmount) {
         return NumberFormat.getCurrencyInstance(Locale.US)
                 .format(totalAmount/ 100);
-    }
-
-    private static Play playFor(Map<String, Play> plays, Performance perf) {
-        return plays.get(perf.playID);
     }
 
     private static int amountFor(Performance aPerformance, Play play) {

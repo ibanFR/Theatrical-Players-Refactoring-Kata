@@ -46,7 +46,8 @@
     - update `totalVolumeCredits` method to use `StatementData` parameter.
     - change function declaration for `totalVolumeCredits` method to remove `invoice` and `plays` parameters.
     - introduce `PerformanceData` parameter object in `volumeCreditsFor` method.
-    - move `volumeCreditsFor` method to `PerformanceData` class.
+    - convert `volumeCreditsFor` to instance method in `PerformanceData` class.
+    - move `playFor` method to `StatementData` class.
     
 
 
