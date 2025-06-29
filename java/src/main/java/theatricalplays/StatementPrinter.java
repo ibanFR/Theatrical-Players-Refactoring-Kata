@@ -21,7 +21,7 @@ public class StatementPrinter {
                                     StatementData.playFor(aStatementData.plays(), perf).name,
                                     usd(new PerformanceData(perf,
                                                             StatementData.playFor(aStatementData.plays(),
-                                                                                             perf)).amountFor()),
+                                                                                             perf)).amount()),
                                     perf.audience);
         }
 
@@ -33,7 +33,7 @@ public class StatementPrinter {
     private static int totalAmount(StatementData data) {
         var result = 0;
         for (var perf : data.performances()) {
-            result += new PerformanceData(perf, StatementData.playFor(data.plays(), perf)).amountFor();
+            result += new PerformanceData(perf, StatementData.playFor(data.plays(), perf)).amount();
         }
         return result;
     }

@@ -1,7 +1,7 @@
 package theatricalplays;
 
 public record PerformanceData(Performance performance, Play play) {
-    int amountFor() {
+    int amount() {
         int result;
         switch (play().type) {
             case "tragedy":
