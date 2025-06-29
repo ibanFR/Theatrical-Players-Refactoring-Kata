@@ -52,6 +52,7 @@
     - introduce `PerformanceData` parameter object in `amountFor` method.
     - convert `amountFor` to instance method in `PerformanceData` class.
     - convert `totalAmount` to instance method in `StatementData` class.
+    - move logic to create `PerformanceData` object to `StatementData` class.
     
 
 

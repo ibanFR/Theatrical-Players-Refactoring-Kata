@@ -19,15 +19,19 @@ public class StatementPrinter {
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
                                     StatementData.playFor(aStatementData.plays(), perf).name,
-                                    usd(new PerformanceData(perf,
-                                                            StatementData.playFor(aStatementData.plays(),
-                                                                                             perf)).amount()),
+                                    usd(getPerformanceData(aStatementData, perf).amount()),
                                     perf.audience);
         }
 
         result += String.format("Amount owed is %s%n", usd(aStatementData.totalAmount()));
         result += String.format("You earned %s credits%n", aStatementData.totalVolumeCredits());
         return result;
+    }
+
+    private static PerformanceData getPerformanceData(StatementData aStatementData, Performance perf) {
+        return new PerformanceData(perf,
+                                   StatementData.playFor(aStatementData.plays(),
+                                                         perf));
     }
 
     private static String usd(int totalAmount) {
