@@ -8,6 +8,16 @@ public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) 
         return plays.get(perf.playID);
     }
 
+    int totalVolumeCredits() {
+        var result = 0;
+        for (var perf : invoice().performances) {
+
+            // add volume credits
+            result += new PerformanceData(perf, playFor(plays(), perf)).volumeCreditsFor();
+        }
+        return result;
+    }
+
     public String customer() {
         return invoice.customer;
     }

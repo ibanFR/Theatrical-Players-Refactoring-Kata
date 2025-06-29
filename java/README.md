@@ -48,6 +48,7 @@
     - introduce `PerformanceData` parameter object in `volumeCreditsFor` method.
     - convert `volumeCreditsFor` to instance method in `PerformanceData` class.
     - move `playFor` method to `StatementData` class.
+    - convert `totalVolumeCredits` to instance method in `StatementData` class.
     
 
 
