@@ -43,6 +43,10 @@ public class StatementPrinter {
 
     private static int amountFor(Performance aPerformance, Play play) {
         PerformanceData performanceData = new PerformanceData(aPerformance, play);
+        return appleSauce(performanceData);
+    }
+
+    private static int appleSauce(PerformanceData performanceData) {
         int result;
         switch (performanceData.play().type) {
             case "tragedy":
