@@ -8,6 +8,12 @@ public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) 
         return plays.get(perf.playID);
     }
 
+    PerformanceData getPerformanceData(Performance perf) {
+        return new PerformanceData(perf,
+                                   playFor(plays(),
+                                           perf));
+    }
+
     int totalAmount() {
         var result = 0;
         for (var perf : performances()) {
