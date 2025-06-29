@@ -41,7 +41,7 @@ public class StatementPrinter {
         for (var perf : data.invoice().performances) {
 
             // add volume credits
-            result += volumeCreditsFor(new PerformanceData(perf, playFor(data.plays(), perf)));
+            result += new PerformanceData(perf, playFor(data.plays(), perf)).volumeCreditsFor();
         }
         return result;
     }
@@ -49,15 +49,6 @@ public class StatementPrinter {
     private static String usd(int totalAmount) {
         return NumberFormat.getCurrencyInstance(Locale.US)
                 .format(totalAmount/ 100);
-    }
-
-    private static int volumeCreditsFor(PerformanceData performanceData) {
-        int result = 0;
-        result += Math.max(performanceData.perf().audience - 30, 0);
-        // add extra credit for every ten comedy attendees
-        if ("comedy".equals(performanceData.play().type))
-            result += Math.floor(performanceData.perf().audience / 5);
-        return result;
     }
 
     private static Play playFor(Map<String, Play> plays, Performance perf) {
