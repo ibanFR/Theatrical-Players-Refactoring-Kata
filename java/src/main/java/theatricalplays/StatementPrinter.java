@@ -44,19 +44,19 @@ public class StatementPrinter {
     private static int amountFor(Performance aPerformance, Play play) {
         PerformanceData performanceData = new PerformanceData(aPerformance, play);
         int result;
-        switch (play.type) {
+        switch (performanceData.play().type) {
             case "tragedy":
                 result = 40000;
-                if (aPerformance.audience > 30) {
-                    result += 1000 * (aPerformance.audience - 30);
+                if (performanceData.performance().audience > 30) {
+                    result += 1000 * (performanceData.performance().audience - 30);
                 }
                 break;
             case "comedy":
                 result = 30000;
-                if (aPerformance.audience > 20) {
-                    result += 10000 + 500 * (aPerformance.audience - 20);
+                if (performanceData.performance().audience > 20) {
+                    result += 10000 + 500 * (performanceData.performance().audience - 20);
                 }
-                result += 300 * aPerformance.audience;
+                result += 300 * performanceData.performance().audience;
                 break;
             default:
                 throw new Error("unknown type: ${play.type}");
