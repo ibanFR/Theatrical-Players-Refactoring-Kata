@@ -18,13 +18,9 @@ public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) 
     }
 
     int totalVolumeCredits() {
-        var result = 0;
-        for (var perf : invoice().performances) {
-
-            // add volume credits
-            result += new PerformanceData(perf, playForPerformance(perf)).volumeCredits();
-        }
-        return result;
+        return this.invoice().performances.stream()
+                .mapToInt(performance -> getPerformanceData(performance).volumeCredits())
+                .sum();
     }
 
     public String customer() {
