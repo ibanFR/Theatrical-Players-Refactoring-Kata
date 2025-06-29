@@ -3,20 +3,20 @@ package theatricalplays;
 import java.util.List;
 
 public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) {
-    Play playFor(Performance perf) {
+    Play playForPerformance(Performance perf) {
         return this.plays.get(perf.playID);
     }
 
     PerformanceData getPerformanceData(Performance perf) {
         return new PerformanceData(perf,
-                                   playFor(
+                                   playForPerformance(
                                            perf));
     }
 
     int totalAmount() {
         var result = 0;
         for (var perf : performances()) {
-            result += new PerformanceData(perf, playFor(perf)).amount();
+            result += new PerformanceData(perf, playForPerformance(perf)).amount();
         }
         return result;
     }
@@ -26,7 +26,7 @@ public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) 
         for (var perf : invoice().performances) {
 
             // add volume credits
-            result += new PerformanceData(perf, playFor(perf)).volumeCreditsFor();
+            result += new PerformanceData(perf, playForPerformance(perf)).volumeCreditsFor();
         }
         return result;
     }

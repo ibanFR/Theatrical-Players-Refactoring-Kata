@@ -18,7 +18,7 @@ public class StatementPrinter {
 
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
-                                    aStatementData.playFor(perf).name,
+                                    aStatementData.playForPerformance(perf).name,
                                     usd(aStatementData.getPerformanceData(perf).amount()),
                                     perf.audience);
         }
