@@ -42,8 +42,7 @@ public class StatementPrinter {
     }
 
     private static int amountFor(Performance aPerformance, Play play) {
-        PerformanceData performanceData = new PerformanceData(aPerformance, play);
-        return appleSauce(performanceData);
+        return appleSauce(new PerformanceData(aPerformance, play));
     }
 
     private static int appleSauce(PerformanceData performanceData) {
