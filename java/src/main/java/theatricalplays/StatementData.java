@@ -12,11 +12,9 @@ public record StatementData(Invoice invoice, java.util.Map<String, Play> plays) 
     }
 
     int totalAmount() {
-        var result = 0;
-        for (var perf : performances()) {
-            result += new PerformanceData(perf, playForPerformance(perf)).amount();
-        }
-        return result;
+        return performances().stream()
+                .mapToInt(performance -> getPerformanceData(performance).amount())
+                .sum();
     }
 
     int totalVolumeCredits() {

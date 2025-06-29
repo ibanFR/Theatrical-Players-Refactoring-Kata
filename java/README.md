@@ -52,6 +52,7 @@
     - introduce `PerformanceData` parameter object in `amountFor` method.
     - convert `amountFor` to instance method in `PerformanceData` class.
     - convert `totalAmount` to instance method in `StatementData` class.
+    - replace loop with pipe in `totalAmount` method.
     - move logic to create `PerformanceData` object to `StatementData` class.
     - make `playFor` method non-static in `StatementData` class.
     
