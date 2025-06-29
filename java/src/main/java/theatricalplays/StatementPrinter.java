@@ -19,9 +19,9 @@ public class StatementPrinter {
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
                                     StatementData.playFor(aStatementData.plays(), perf).name,
-                                    usd(amountFor(new PerformanceData(perf,
-                                                                      StatementData.playFor(aStatementData.plays(),
-                                                                                             perf)))),
+                                    usd(new PerformanceData(perf,
+                                                            StatementData.playFor(aStatementData.plays(),
+                                                                                             perf)).amountFor()),
                                     perf.audience);
         }
 
@@ -33,7 +33,7 @@ public class StatementPrinter {
     private static int totalAmount(StatementData data) {
         var result = 0;
         for (var perf : data.performances()) {
-            result += amountFor(new PerformanceData(perf, StatementData.playFor(data.plays(), perf)));
+            result += new PerformanceData(perf, StatementData.playFor(data.plays(), perf)).amountFor();
         }
         return result;
     }
@@ -41,28 +41,6 @@ public class StatementPrinter {
     private static String usd(int totalAmount) {
         return NumberFormat.getCurrencyInstance(Locale.US)
                 .format(totalAmount/ 100);
-    }
-
-    private static int amountFor(PerformanceData performanceData) {
-        int result;
-        switch (performanceData.play().type) {
-            case "tragedy":
-                result = 40000;
-                if (performanceData.performance().audience > 30) {
-                    result += 1000 * (performanceData.performance().audience - 30);
-                }
-                break;
-            case "comedy":
-                result = 30000;
-                if (performanceData.performance().audience > 20) {
-                    result += 10000 + 500 * (performanceData.performance().audience - 20);
-                }
-                result += 300 * performanceData.performance().audience;
-                break;
-            default:
-                throw new Error("unknown type: ${play.type}");
-        }
-        return result;
     }
 
 }
