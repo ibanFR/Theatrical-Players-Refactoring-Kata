@@ -19,8 +19,8 @@ public class StatementPrinter {
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
                                     StatementData.playFor(aStatementData.plays(), perf).name,
-                                    usd(appleSauce(new PerformanceData(perf,
-                                                                       StatementData.playFor(aStatementData.plays(),
+                                    usd(amountFor(new PerformanceData(perf,
+                                                                      StatementData.playFor(aStatementData.plays(),
                                                                                              perf)))),
                                     perf.audience);
         }
@@ -33,7 +33,7 @@ public class StatementPrinter {
     private static int totalAmount(StatementData data) {
         var result = 0;
         for (var perf : data.performances()) {
-            result += appleSauce(new PerformanceData(perf, StatementData.playFor(data.plays(), perf)));
+            result += amountFor(new PerformanceData(perf, StatementData.playFor(data.plays(), perf)));
         }
         return result;
     }
@@ -43,7 +43,7 @@ public class StatementPrinter {
                 .format(totalAmount/ 100);
     }
 
-    private static int appleSauce(PerformanceData performanceData) {
+    private static int amountFor(PerformanceData performanceData) {
         int result;
         switch (performanceData.play().type) {
             case "tragedy":
