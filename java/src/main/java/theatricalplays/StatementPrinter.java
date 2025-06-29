@@ -11,20 +11,20 @@ public class StatementPrinter {
         return renderPlainText(statementData);
     }
 
-    private static String renderPlainText(StatementData data) {
-        var result = String.format("Statement for %s%n", data.customer());
+    private static String renderPlainText(StatementData aStatementData) {
+        var result = String.format("Statement for %s%n", aStatementData.customer());
 
-        for (var perf : data.performances()) {
+        for (var perf : aStatementData.performances()) {
 
             // print line for this order
             result += String.format("  %s: %s (%s seats)%n",
-                                    playFor(data.plays(), perf).name,
-                                    usd(amountFor(perf, playFor(data.plays(), perf))),
+                                    playFor(aStatementData.plays(), perf).name,
+                                    usd(amountFor(perf, playFor(aStatementData.plays(), perf))),
                                     perf.audience);
         }
 
-        result += String.format("Amount owed is %s%n", usd(totalAmount(data)));
-        result += String.format("You earned %s credits%n", totalVolumeCredits(data));
+        result += String.format("Amount owed is %s%n", usd(totalAmount(aStatementData)));
+        result += String.format("You earned %s credits%n", totalVolumeCredits(aStatementData));
         return result;
     }
 
